@@ -15,6 +15,7 @@ class Eversys::MachineTest < Test::Unit::TestCase
       .new(client: api_client)
       .machines
 
+    assert_equal 1, machines.length
     assert_equal "<Customer Name>", machines.first.customer.name
   end
 

@@ -5,7 +5,7 @@ class Eversys::ClientTest < Test::Unit::TestCase
     client = api_client
 
     assert_not_nil client
-    assert_equal "https://api.eversys-telemetry.com", client.api_host
+    assert_equal "https://api.eversys-telemetry.com/", client.api_host
   end
 
   test "should perform a get request" do

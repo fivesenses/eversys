@@ -25,7 +25,7 @@ module Eversys
     # @returns Net::HttpResponse
     #
     def get(url)
-      perform_request(request: build_request({verb: "Get", url: url}))
+      perform_request(request: build_request({verb: "Get", url: url, token: @api_token}))
     end
 
     # Performs a POST operation

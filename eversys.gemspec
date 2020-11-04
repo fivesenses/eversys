@@ -19,7 +19,7 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency "oauth2"
   spec.add_development_dependency "bundler", "2.1.4"
-  spec.add_development_dependency "rake"
+  spec.add_development_dependency "rake", "~> 13"
   spec.add_development_dependency "simplecov"
   spec.add_development_dependency "simplecov-cobertura"
   spec.add_development_dependency "test-unit"

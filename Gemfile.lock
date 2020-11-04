@@ -86,7 +86,7 @@ DEPENDENCIES
   eversys!
   mocha
   oauth2
-  rake
+  rake (~> 13)
   simplecov
   simplecov-cobertura
   standardrb
