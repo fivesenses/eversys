@@ -7,8 +7,8 @@ module Eversys
     end
 
     def machine(machine_id:)
-      response = perform_get(url: "machines/#{machine_id}")
-      response.first
+      results = perform_get(url: "machines/#{machine_id}")
+      results.first
     end
 
     def by_group(group_id:)
@@ -16,8 +16,28 @@ module Eversys
     end
 
     def counters(machine_id:)
-      response = perform_get(url: "machines/machine-counters/#{machine_id}")
-      response.first
+      results = perform_get(url: "machines/machine-counters/#{machine_id}")
+      results.first
+    end
+
+    def events(machine_id:)
+      perform_get(url: "machines/#{machine_id}/events")
+    end
+
+    def errors(machine_id:)
+      perform_get(url: "machines/#{machine_id}/errors")
+    end
+
+    def rinses(machine_id:)
+      perform_get(url: "machines/#{machine_id}/rinses")
+    end
+
+    def installations(machine_id:)
+      perform_get(url: "machines/installations/#{machine_id}")
+    end
+
+    def cleanings(machine_id:)
+      perform_get(url: "machines/#{machine_id}/cleanings")
     end
   end
 end
