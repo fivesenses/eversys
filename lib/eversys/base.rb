@@ -19,6 +19,12 @@ module Eversys
         .compiled_data
     end
 
+    def perform_get(url:)
+      response = @client.get(url)
+      handle_error(response: response)
+      process(response: response)
+    end
+
     private
 
     # Check to see if the response contains an error and raise an error if
