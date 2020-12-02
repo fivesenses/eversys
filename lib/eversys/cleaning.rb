@@ -2,6 +2,11 @@
 
 module Eversys
   class Cleaning < Eversys::Base
+    # @param machine_id [String]
+    def by_machine(machine_id:)
+      perform_get(url: "machines/#{machine_id}/cleanings")
+    end
+
     def cleaning_ratings_by_machine(machine_id:)
       perform_get(url: "machines/cleaning-ratings/#{machine_id}")
     end

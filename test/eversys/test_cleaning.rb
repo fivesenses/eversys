@@ -1,6 +1,18 @@
 require "test_helper"
 
 class Eversys::CleaningTest < Test::Unit::TestCase
+  test "should get cleaning history for a machine" do
+    stub_get("machines/1234/cleanings")
+      .with(headers: stub_headers)
+      .to_return(status: 200,
+                 body: fixture("get_machine_cleanings_200.json"))
+    cleanings = Eversys::Cleaning
+      .new(client: api_client)
+      .by_machine(machine_id: 1234)
+
+    assert_equal "YES", cleanings.first.tabsStatus.left
+  end
+
   test "should get a machines cleaning ratings" do
     stub_get("machines/cleaning-ratings/1234")
       .with(headers: stub_headers)
