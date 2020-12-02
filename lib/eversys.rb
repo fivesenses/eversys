@@ -3,6 +3,7 @@ require "json"
 
 require "eversys/base"
 require "eversys/errors"
+require "eversys/cleaning"
 require "eversys/client"
 require "eversys/machine"
 require "eversys/milk"
